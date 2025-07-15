@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 from matplotlib import colors
 from matplotlib.patches import Rectangle
 from mpl_toolkits.axes_grid1.axes_divider import make_axes_locatable
+import os
 
 import utility_functions as utils
 ###################################################
@@ -80,6 +81,7 @@ def plotEvent(data, model):
         fig.colorbar(im, cax=cax)
         
         plt.subplots_adjust(bottom=0.15, left=0.05, right=0.95, wspace=0.3)
+        os.makedirs("fig_png", exist_ok=True) # added to ensure such folder exists
         plt.savefig("fig_png/event.png", bbox_inches="tight")
 ###################################################################### 
 ###################################################################### 
